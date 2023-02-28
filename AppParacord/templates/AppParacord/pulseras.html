@@ -1,0 +1,22 @@
+{% extends "AppParacord/padre.html" %}
+    {% load static %}
+{% block contenidoQueCambia %}
+
+    <!--Aqui se va a colocar lo que se cambia y esta asociado a la vista-->
+    <body>
+        <h1></h1>
+        {% if miFormulario.errors %}
+        <p style="color: red;">Estan mal los datos, revisar</p>
+        {% endif %}
+    
+        <form action=""    method="post">{% csrf_token %}
+            <table>
+    
+                {{miFormulario.as_table}}
+    
+            </table>
+            <input type = "submit" value="Enviar">
+         </form>   
+    </body>
+    </html>
+        {% endblock %}
